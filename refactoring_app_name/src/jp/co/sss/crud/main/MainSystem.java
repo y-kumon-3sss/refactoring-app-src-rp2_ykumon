@@ -6,9 +6,12 @@ import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.text.ParseException;
 
-import jp.co.sss.crud.db.DBController;
 import jp.co.sss.crud.service.EmployeeAllFindService;
+import jp.co.sss.crud.service.EmployeeDeleteService;
+import jp.co.sss.crud.service.EmployeeFindByDeptIdService;
 import jp.co.sss.crud.service.EmployeeFindByEmpNameService;
+import jp.co.sss.crud.service.EmployeeRegisterService;
+import jp.co.sss.crud.service.EmployeeUpdateService;
 import jp.co.sss.crud.util.ConstantMsg;
 import jp.co.sss.crud.util.ConstantValue;
 
@@ -71,7 +74,7 @@ public class MainSystem {
 				String searchDeptId = br.readLine();
 
 				// 検索機能の呼出
-				DBController.findByDeptId(searchDeptId);
+				EmployeeFindByDeptIdService.findByDeptId(searchDeptId);
 				break;
 
 			case ConstantValue.MENU_NUMBER_FOUR:
@@ -86,7 +89,7 @@ public class MainSystem {
 				String newDeptId = br.readLine();
 
 				// 登録機能の呼出
-				DBController.insert(empName, gender, birthday, newDeptId);
+				EmployeeRegisterService.insert(empName, gender, birthday, newDeptId);
 				break;
 
 			case ConstantValue.MENU_NUMBER_FIVE:
@@ -98,7 +101,7 @@ public class MainSystem {
 				Integer.parseInt(updateEmpId);
 
 				// 更新機能の呼出
-				DBController.update(updateEmpId);
+				EmployeeUpdateService.update(updateEmpId);
 				System.out.println(ConstantMsg.MSG_UPDATED_EMPLOYEE);
 
 				break;
@@ -108,7 +111,7 @@ public class MainSystem {
 				System.out.print(ConstantMsg.MSG_INPUT_DELETE_EMPLOYEE_ID);
 
 				// 削除機能の呼出
-				DBController.delete();
+				EmployeeDeleteService.delete();
 				break;
 
 			}
