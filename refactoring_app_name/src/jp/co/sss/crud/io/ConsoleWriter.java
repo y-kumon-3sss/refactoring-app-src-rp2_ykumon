@@ -28,4 +28,18 @@ public class ConsoleWriter {
 		// レコードのヘッダー表示
 		System.out.println(ConstantMsg.MSG_RECORD_OUT);
 	}
+
+	public static void showMenu() {
+		// メニューの表示
+		System.out.println(ConstantMsg.MSG_EMPLYEE_MANAGEMENT_SYSTEM);
+		System.out.println(ConstantMsg.MSG_MENU_DISPLAY_ALL);
+		System.out.println(ConstantMsg.MSG_MENU_SEARCH_EMPLOYEE);
+		System.out.println(ConstantMsg.MSG_MENU_SEARCH_DEPT_ID);
+		System.out.println(ConstantMsg.MSG_MENU_REGIST_EMPLOYEE);
+		System.out.println(ConstantMsg.MSG_MENU_UPDATE_EMPLOYEE);
+		System.out.println(ConstantMsg.MSG_MENU_DELETEEMPLOYEE);
+		System.out.println(ConstantMsg.MSG_MENU_END);
+		System.out.print(ConstantMsg.MSG_MENU);
+
+	}
 }

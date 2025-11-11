@@ -124,7 +124,7 @@ public class EmployeeDAO {
 	 * @throws SQLException           DB処理でエラーが発生した場合に送出
 	 * @throws IOException            入力処理でエラーが発生した場合に送出
 	 */
-	public static List<Employee> findByDeptId(String deptId) throws ClassNotFoundException, SQLException, IOException {
+	public static List<Employee> findByDeptId(String deptId) throws ClassNotFoundException, IOException, SQLException {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -274,7 +274,7 @@ public class EmployeeDAO {
 	 * @throws SQLException           DB処理でエラーが発生した場合に送出
 	 * @throws IOException            入力処理でエラーが発生した場合に送出
 	 */
-	public static void delete() {
+	public static void delete() throws ClassNotFoundException, IOException, SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -295,20 +295,11 @@ public class EmployeeDAO {
 
 			System.out.println(ConstantMsg.MSG_DELETED_EMPLOYEE);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		}
-
-		finally {
-			try {
-				// Statementをクローズ
-				DBManager.close(preparedStatement);
-				// DBとの接続を切断
-				DBManager.close(connection);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		} finally {
+			// Statementをクローズ
+			DBManager.close(preparedStatement);
+			// DBとの接続を切断
+			DBManager.close(connection);
 		}
 	}
 }

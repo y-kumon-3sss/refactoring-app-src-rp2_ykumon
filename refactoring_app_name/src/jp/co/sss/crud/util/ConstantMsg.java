@@ -60,4 +60,9 @@ public class ConstantMsg {
 	/** 区切り文字_タブ */
 	public static final String DELIMITER_TAB = "\t";
 
+	/** システムエラー */
+	public static final String MSG_SYSTEM_ERROR = "システムエラーが発生しました。";
+	/** メニュー番号入力エラー */
+	public static final String MSG_ERROR_INPUT_NUMBER = "半角数字で入力してください。";
+
 }
