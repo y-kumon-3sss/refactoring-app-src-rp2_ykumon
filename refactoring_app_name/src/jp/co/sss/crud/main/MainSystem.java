@@ -9,6 +9,7 @@ import java.text.ParseException;
 import jp.co.sss.crud.exception.IllegalInputException;
 import jp.co.sss.crud.exception.SystemErrorException;
 import jp.co.sss.crud.io.ConsoleWriter;
+import jp.co.sss.crud.io.MenuNoReader;
 import jp.co.sss.crud.service.EmployeeAllFindService;
 import jp.co.sss.crud.service.EmployeeDeleteService;
 import jp.co.sss.crud.service.EmployeeFindByDeptIdService;
@@ -36,6 +37,8 @@ public class MainSystem {
 	 */
 	public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException, ParseException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// メニュー番号の入力チェッククラスのインスタンス生成
+		MenuNoReader menuReader = new MenuNoReader();
 
 		int menuNo = 0;
 
@@ -45,12 +48,7 @@ public class MainSystem {
 				ConsoleWriter.showMenu();
 
 				// メニュー番号の入力
-				String menuNoStr = br.readLine();
-				try {
-					menuNo = Integer.parseInt(menuNoStr);
-				} catch (NumberFormatException e) {
-					throw new IllegalInputException(ConstantMsg.MSG_ERROR_INPUT_NUMBER, e);
-				}
+				menuNo = (Integer) menuReader.input();
 
 				// 機能の呼出
 				switch (menuNo) {

@@ -54,7 +54,7 @@ public class ConstantMsg {
 	public static final String MSG_END_SYSTEM = "システムを終了します。";
 
 	/** 該当者なしメッセージ */
-	public static final String MSG_NOT_APPLICABLE_PERSON = "該当者はいませんでした";
+	public static final String MSG_NOT_APPLICABLE_PERSON = "対象者がいませんでした";
 	/** レコードを出力用メッセージ */
 	public static final String MSG_RECORD_OUT = "社員ID\t社員名\t性別\t生年月日\t部署名";
 	/** 区切り文字_タブ */
@@ -62,7 +62,10 @@ public class ConstantMsg {
 
 	/** システムエラー */
 	public static final String MSG_SYSTEM_ERROR = "システムエラーが発生しました。";
-	/** メニュー番号入力エラー */
+	/** 半角数字の入力エラー */
 	public static final String MSG_ERROR_INPUT_NUMBER = "半角数字で入力してください。";
+
+	/** メニュー番号入力チェックエラー */
+	public static final String MSG_ERROR_INPUT_CHECK_MENU_NUMBER = "1以上7以下の整数を入力してください：";
 
 }
