@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.text.ParseException;
 
 import jp.co.sss.crud.db.DBController;
+import jp.co.sss.crud.service.EmployeeAllFindService;
+import jp.co.sss.crud.service.EmployeeFindByEmpNameService;
 import jp.co.sss.crud.util.ConstantMsg;
 import jp.co.sss.crud.util.ConstantValue;
 
@@ -51,15 +53,16 @@ public class MainSystem {
 			switch (menuNo) {
 			case ConstantValue.MENU_NUMBER_ONE:
 				// 全件表示機能の呼出
-				DBController.findAll();
+				EmployeeAllFindService.findAll();
 				break;
 
 			case ConstantValue.MENU_NUMBER_TWO:
 				// 社員名検索
 				System.out.print(ConstantMsg.MSG_INPUT_EMPLOYEE_NAME);
+				String searchEmpName = br.readLine();
 
 				// 検索機能の呼出
-				DBController.findByEmployeeName();
+				EmployeeFindByEmpNameService.findByEmployeeName(searchEmpName);
 				break;
 
 			case ConstantValue.MENU_NUMBER_THREE:

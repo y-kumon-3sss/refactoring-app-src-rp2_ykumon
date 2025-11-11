@@ -56,7 +56,7 @@ public class ConstantMsg {
 	/** 該当者なしメッセージ */
 	public static final String MSG_NOT_APPLICABLE_PERSON = "該当者はいませんでした";
 	/** レコードを出力用メッセージ */
-	public static final String MSG_RECORD_OUT = "社員ID\\t社員名\\t性別\\t生年月日\\t部署名";
+	public static final String MSG_RECORD_OUT = "社員ID\t社員名\t性別\t生年月日\t部署名";
 	/** 区切り文字_タブ */
 	public static final String DELIMITER_TAB = "\t";
 
